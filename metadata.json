@@ -1,0 +1,5 @@
+{
+  "name": "Abhay's Personal Portfolio",
+  "description": "A responsive, dark-mode enabled personal portfolio website for Abhay, built with React and Tailwind CSS. It showcases services, latest works, skills, and contact information, based on a user-provided design concept.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,65 @@
+
+import React from 'react';
+
+const blogArticles = [
+    {
+        image: '/blog-images/landingpage-blogs-images/IMG_9832.jpg',
+        date: '24 APR 2024',
+        title: 'Why Ancient Indian Cities Were Smarter Than Us',
+        isMain: true,
+    },
+    {
+        image: '/blog-images/landingpage-blogs-images/IMG_9988.jpeg',
+        date: '20 APR 2024',
+        title: 'Lost in Transit: My Adventures Outside Roorkee',
+        isMain: false,
+    },
+    {
+        image: '/blog-images/landingpage-blogs-images/muhchodi.jpg',
+        date: '15 APR 2024',
+        title: 'Surviving IIT Roorkee: Dosti, trips & Deadlines',
+        isMain: false,
+    },
+];
+
+const Blog: React.FC = () => {
+    const mainArticle = blogArticles.find(a => a.isMain);
+    const sideArticles = blogArticles.filter(a => !a.isMain);
+
+    return (
+        <section id="blogs" className="py-24">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <p className="text-base font-medium uppercase tracking-[3px]">Our Corner</p>
+                    <h2 className="text-[50px] font-bold -tracking-wide leading-tight">Latest Blog/Articles</h2>
+                </div>
+                <a href="#" className="mt-4 md:mt-0 px-6 py-3 rounded-full border-2 border-theme-red font-semibold hover:bg-theme-red hover:text-white dark:hover:text-dark-text transition-colors">
+                    EXPLORE MORE
+                </a>
+            </div>
+
+            <div className="flex flex-col lg:flex-row gap-12">
+                {mainArticle && (
+                    <div className="lg:w-2/3">
+                        <img src={mainArticle.image} alt={mainArticle.title} className="w-full h-auto object-cover rounded-3xl mb-6"/>
+                        <p className="text-lg text-light-text-muted dark:text-dark-text-muted mb-2">{mainArticle.date}</p>
+                        <h3 className="text-4xl font-semibold leading-snug hover:text-theme-red transition-colors cursor-pointer">
+                            <span className="font-semibold italic">Why Ancient Indian Cities Were Smarter </span> Than Us, <span className="font-normal">The story of the design</span>
+                        </h3>
+                    </div>
+                )}
+                <div className="lg:w-1/3 flex flex-col gap-6">
+                    {sideArticles.map((article, index) => (
+                        <div key={index} className="flex flex-col">
+                            <img src={article.image} alt={article.title} className="w-full h-full object-cover rounded-xl mb-2"/>
+                             <p className="text-sm text-light-text-muted dark:text-dark-text-muted mb-1">{article.date}</p>
+                            <h4 className="text-xl font-semibold leading-normal hover:text-theme-red transition-colors cursor-pointer">{article.title}</h4>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Blog;
