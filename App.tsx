@@ -7,11 +7,11 @@ import Services from './components/Services';
 import Projects from './components/Projects';
 import About from './components/About';
 import Softwares from './components/Softwares';
-import GetStarted from './components/GetStarted';
+import SocialLife from './components/SocialLife';
 import Faq from './components/Faq';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
-import LetsBuild from './components/LetsBuild';
+import CurtainCall from './components/CurtainCall';
 import Footer from './components/Footer';
 import ThemeToggle from './components/ThemeToggle';
 import AboutPage from './components/AboutPage';
@@ -28,11 +28,11 @@ const HomePage: React.FC = () => (
     <Projects />
     <About />
     <Softwares />
-    <GetStarted />
+    <SocialLife />
     <Faq />
     <Blog />
     <Contact />
-    <LetsBuild />
+    <CurtainCall />
   </main>
 );
 

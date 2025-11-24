@@ -1,32 +1,6 @@
 
 import React from 'react';
 
-// Change this value (px) to control spacing between the right-side columns (Menu and Service)
-const RIGHT_COLS_GAP_PX = 32;
-// Change this value (px) to control how far the right block (Menu+Service) sits from the right edge
-// Set to 0 to pin to the right edge, or any larger px value to move it leftwards.
-const RIGHT_BLOCK_RIGHT_OFFSET_PX = 24;
-
-// Safe helper: accept a number or numeric string and return a valid px string.
-// Falls back to a default (0px) for invalid inputs. Also prevents very large negative/NaN values.
-function toPx(value: unknown, fallback = 0) {
-    if (typeof value === 'number' && Number.isFinite(value)) return `${value}px`;
-    if (typeof value === 'string') {
-        const num = Number(value.replace(/[^0-9.-]/g, ''));
-        if (Number.isFinite(num)) return `${num}px`;
-    }
-    return `${fallback}px`;
-}
-
-// Opacity for copyright/terms text. Number between 0 (transparent) and 1 (opaque).
-const COPYRIGHT_OPACITY = 0.6;
-
-function clampOpacity(v: unknown, fallback = 1) {
-    const n = typeof v === 'number' ? v : typeof v === 'string' ? Number(v) : NaN;
-    if (!Number.isFinite(n)) return fallback;
-    return Math.max(0, Math.min(1, n));
-}
-
 const Footer: React.FC = () => {
     return (
         <footer className="bg-gray-50 dark:bg-black/50">
@@ -39,10 +13,46 @@ const Footer: React.FC = () => {
                             <span className="block h-[1px] w-16 bg-current mt-1"></span>
                             <span className="block h-[1px] w-10 bg-current mt-1"></span>
                         </a>
-                        <div className="mt-3 flex space-x-4">
-                            <a href="#" className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors">Yt</a>
-                            <a href="#" className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors">Fb</a>
-                            <a href="#" className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors">X</a>
+                        <div className="mt-3 flex space-x-3">
+                            {/* LinkedIn */}
+                                <a 
+                                    href="https://www.linkedin.com/in/abhay-kishor-y130s" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors"
+                                >
+                                    in
+                                </a>
+
+                            {/* Behance */}
+                                <a 
+                                    href="https://www.behance.net/abhaykishor130" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors"
+                                >
+                                    Bē
+                                </a>
+                            
+                            {/* X (Twitter) */}
+                                <a 
+                                    href="https://x.com/abhay__130" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors"
+                                >
+                                    X
+                                </a>
+                            
+                            {/* Facebook / Instagram */}
+                                <a 
+                                    href="https://www.facebook.com/abhay130s" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors"
+                                >
+                                    f
+                                </a>
                         </div>
                     </div>
 

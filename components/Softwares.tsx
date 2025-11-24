@@ -1,13 +1,14 @@
 import React from 'react';
 
 const skillsLogos = [
-    '/offline_images/autocad-2.svg',
-    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
-    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
-    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg',
-    'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg'
+    '/landing-page-images/autocad-2.svg',
+    '/landing-page-images/c.svg',
+    '/landing-page-images/canva-wordmark-2.svg',
+    '/landing-page-images/figma-icon.svg',
+    '/landing-page-images/github-icon.svg',
+    '/landing-page-images/logo-blender.svg',
+    '/landing-page-images/python-5.svg',
+    '/landing-page-images/react.svg',
 ];
 
 const Softwares: React.FC = () => {

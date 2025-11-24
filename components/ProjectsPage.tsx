@@ -3,11 +3,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const projectItems = [
-  { image: 'https://picsum.photos/seed/project1/448/576', title: 'Architecture', category: 'Spaces & Structures Body' },
-  { image: 'https://picsum.photos/seed/project2/448/576', title: 'Design', category: 'Brand & Identity' },
-  { image: 'https://picsum.photos/seed/project3/448/576', title: 'Codes', category: 'Code & Logic' },
-  { image: 'https://picsum.photos/seed/project4/448/576', title: 'Career talks', category: 'The listerner and a Mentor' },
-  { image: 'https://picsum.photos/seed/project5/448/576', title: 'Social things', category: 'For myself and people' },
+  { image: '/landing-page-images/architecture.jpg', title: 'Architecture', category: 'Spaces & Structures Body' },
+  { image: '/landing-page-images/design.JPG', title: 'Design', category: 'Brand & Identity' },
+  { image: '/landing-page-images/code.JPG', title: 'Codes', category: 'Code & Logic' },
+  { image: '/landing-page-images/career.jpeg', title: 'Career talks', category: 'The listerner and a Mentor' },
+  { image: '/landing-page-images/social.jpg', title: 'Social things', category: 'For myself and people' },
 ];
 
 const ProjectsPage: React.FC = () => {

@@ -7,7 +7,7 @@ const AboutPage: React.FC = () => {
         <main className="p-8">
             <section id="about" className="py-24 flex flex-col md:flex-row items-center gap-16">
                 <div className="flex-1">
-                    <img src="/offline_images/abhay-profile.JPG" alt="Abhay Kishor" className="rounded-3xl object-cover w-full h-auto" />
+                    <img src="/landing-page-images/abhay-profile.JPG" alt="Abhay Kishor" className="rounded-3xl object-cover w-full h-auto" />
                 </div>
                 <div className="flex-1 flex flex-col items-start">
                     <p className="font-semibold text-[18px] mt-[0px] tracking-wide">ABHAY KISHOR</p>
