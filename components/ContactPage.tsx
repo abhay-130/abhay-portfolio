@@ -8,8 +8,6 @@ const ContactPage: React.FC = () => {
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    
-    // 1. Capture the form element immediately so we can reset it later
     const form = event.currentTarget;
     
     setIsSubmitting(true);
@@ -28,16 +26,15 @@ const ContactPage: React.FC = () => {
 
       if (data.success) {
         setResult("Message sent successfully! I'll get back to you soon.");
-        form.reset(); // <--- This clears the inputs on success
+        form.reset();
       } else {
         console.error("API Error:", data);
         setResult(data.message || "Something went wrong.");
       }
     } catch (error) {
       console.error("Network Error:", error);
-      // Even if there is a network glitch, if we assume it sent, clear the form:
       setResult("Message sent!"); 
-      form.reset(); // <--- This clears the inputs even on 'false alarm' errors
+      form.reset();
     } finally {
       setIsSubmitting(false);
     }
@@ -52,19 +49,24 @@ const ContactPage: React.FC = () => {
             
             <form onSubmit={onSubmit} className="space-y-6">
                 
-                {/* Custom Email Settings */}
                 <input type="hidden" name="subject" value="New Project Inquiry from Portfolio" />
                 <input type="hidden" name="from_name" value="Portfolio Contact" />
                 
                 <input type="text" name="name" required placeholder="Your name" className="w-full p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors" />
-                <input type="email" name="email" required placeholder="Your email" className="w-full p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors" />
-                <textarea name="message" required placeholder="Your message" rows={5} className="w-full p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors"></textarea>
+                <input type="email" name="email" required placeholder="Your email/contact" className="w-full p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors" />
+                
+                <textarea 
+                  name="message" 
+                  required 
+                  placeholder="Your message" 
+                  rows={5} 
+                  className="w-full p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors resize-none"
+                ></textarea>
                 
                 <button type="submit" disabled={isSubmitting} className="w-full px-8 py-4 bg-theme-red text-white dark:text-dark-text font-semibold rounded-full text-lg hover:opacity-80 transition-opacity disabled:opacity-50">
                   {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
                 </button>
 
-                {/* Status Message */}
                 {result && (
                   <p className={`text-center mt-4 font-medium ${result.includes("sent") ? "text-green-600" : "text-red-500"}`}>
                     {result}
@@ -85,13 +87,28 @@ const ContactPage: React.FC = () => {
                     <span className="text-theme-red text-2xl">📍</span>
                     <p className="text-xl"> IIT Roorkee, India</p>
                 </div>
+                
+                {/* --- CLICKABLE EMAIL START --- */}
                 <div className="flex items-center gap-4">
                     <span className="text-theme-red text-2xl">✉️</span>
-                    <p className="text-xl">abhaykishor130@gmail.com</p>
+                    <a 
+                      href="mailto:abhaykishor130@gmail.com" 
+                      className="text-xl hover:text-theme-red transition-colors"
+                    >
+                      abhaykishor130@gmail.com
+                    </a>
                 </div>
+                {/* --- CLICKABLE EMAIL END --- */}
+
                 <div className="flex items-center gap-4">
                     <span className="text-theme-red text-2xl">📞</span>
-                    <p className="text-xl">+91 8273746070</p>
+                    {/* Bonus: I made the phone number clickable too! */}
+                    <a 
+                      href="tel:+918273746070" 
+                      className="text-xl hover:text-theme-red transition-colors"
+                    >
+                      +91 8273746070
+                    </a>
                 </div>
             </div>
             </div>
