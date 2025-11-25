@@ -20,6 +20,7 @@ import SocialLifePage from './components/SocialLifePage';
 import ServicesPage from './components/ServicesPage';
 import BlogsPage from './components/BlogsPage';
 import ContactPage from './components/ContactPage';
+import ScrollToTop from './components/ScrollToTop';
 
 const HomePage: React.FC = () => (
   <main className="max-w-[1440px] mx-auto px-12 sm:px-16 lg:px-13">
@@ -64,6 +65,7 @@ const App: React.FC = () => {
 
   return (
     <div className="bg-white dark:bg-dark-bg text-light-text dark:text-dark-text font-poppins transition-colors duration-400 ease-in-out overflow-x-hidden">
+      <ScrollToTop />
       <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
       <Header />
       <Routes>
