@@ -4,7 +4,7 @@ import React from 'react';
 const Footer: React.FC = () => {
     return (
         <footer className="bg-gray-50 dark:bg-black/50">
-            <div className="max-w-[1440px] mx-auto pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 px-4 sm:px-8 md:px-12 lg:px-20">
+            <div className="max-w-[1440px] mx-auto pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
                 {/* Right-side layout: brand on left, Menu and Service as separate siblings on the right */}
                 <div className="flex flex-col md:flex-row items-start md:items-stretch justify-between gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
                     <div className="ml-0 md:ml-3 flex-1 w-full md:w-auto">

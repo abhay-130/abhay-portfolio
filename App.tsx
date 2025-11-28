@@ -66,8 +66,13 @@ const App: React.FC = () => {
   return (
     <div className="bg-white dark:bg-dark-bg text-light-text dark:text-dark-text font-poppins transition-colors duration-400 ease-in-out overflow-x-hidden">
       <ScrollToTop />
-      <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-      <Header />
+      
+      {/* 1. DELETE or COMMENT OUT this line so the floating button disappears: */}
+      {/* <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} /> */}
+  
+      {/* 2. PASS the props to Header instead: */}
+      <Header isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+      
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
