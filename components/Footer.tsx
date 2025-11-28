@@ -4,14 +4,14 @@ import React from 'react';
 const Footer: React.FC = () => {
     return (
         <footer className="bg-gray-50 dark:bg-black/50">
-            <div className="max-w-[1440px] mx-auto pt-20 pb-10 px-12 sm:px-16 lg:px-20">
+            <div className="max-w-[1440px] mx-auto pt-12 sm:pt-16 md:pt-20 pb-8 sm:pb-10 px-4 sm:px-8 md:px-12 lg:px-20">
                 {/* Right-side layout: brand on left, Menu and Service as separate siblings on the right */}
-                <div className="flex flex-col md:flex-row items-start md:items-stretch justify-between gap-8 mb-12">
-                    <div className="ml-3 flex-1">
-                        <a href="#" className="font-poppins font-bold text-3xl dark:text-dark-text relative inline-block">
+                <div className="flex flex-col md:flex-row items-start md:items-stretch justify-between gap-6 sm:gap-8 mb-8 sm:mb-10 md:mb-12">
+                    <div className="ml-0 md:ml-3 flex-1 w-full md:w-auto">
+                        <a href="#" className="font-poppins font-bold text-2xl sm:text-3xl dark:text-dark-text relative inline-block">
                             AbhaY
-                            <span className="block h-[1px] w-16 bg-current mt-1"></span>
-                            <span className="block h-[1px] w-10 bg-current mt-1"></span>
+                            <span className="block h-[1px] w-12 sm:w-16 bg-current mt-1"></span>
+                            <span className="block h-[1px] w-8 sm:w-10 bg-current mt-1"></span>
                         </a>
                         <div className="mt-3 flex space-x-3">
                             {/* LinkedIn */}
@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
                                     href="https://www.linkedin.com/in/abhay-kishor-y130s" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors"
+                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors text-sm"
                                 >
                                     in
                                 </a>
@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
                                     href="https://www.behance.net/abhaykishor130" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors"
+                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors text-sm"
                                 >
                                     Bē
                                 </a>
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                                     href="https://x.com/abhay__130" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors"
+                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors text-sm"
                                 >
                                     X
                                 </a>
@@ -49,36 +49,33 @@ const Footer: React.FC = () => {
                                     href="https://www.facebook.com/abhay130s" 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors"
+                                    className="w-8 h-8 flex items-center justify-center border-2 border-light-text dark:border-dark-text rounded-full hover:bg-light-text hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg transition-colors text-sm"
                                 >
                                     f
                                 </a>
                         </div>
                     </div>
 
-                    <div
-                        className="flex md:ml-auto items-start md:items-stretch md:flex-row md:flex-row-reverse"
-                        style={{ gap: '100px', marginRight: '0px' }}
-                    >
+                    <div className="flex flex-col sm:flex-row md:ml-auto items-start md:items-stretch gap-8 sm:gap-12 md:gap-16 lg:gap-20 w-full md:w-auto">
                         <div className="flex-1">
-                            <h4 className="font-bold text-lg uppercase tracking-[3px] text-theme-white mb-4">Menu</h4>
+                            <h4 className="font-bold text-base sm:text-lg uppercase tracking-[3px] text-theme-white mb-3 sm:mb-4">Menu</h4>
                             <ul className="space-y-2">
                                 {['Home', 'About', 'Services', 'Blogs'].map(item => (
-                                    <li key={item}><a href="#" className="hover:text-theme-red transition-colors">{item}</a></li>
+                                    <li key={item}><a href="#" className="text-sm sm:text-base hover:text-theme-red transition-colors">{item}</a></li>
                                 ))}
                             </ul>
                         </div>
                         <div className="flex-1">
-                            <h4 className="font-bold text-lg uppercase tracking-[3px] text-theme-white mb-4">Service</h4>
+                            <h4 className="font-bold text-base sm:text-lg uppercase tracking-[3px] text-theme-white mb-3 sm:mb-4">Service</h4>
                             <ul className="space-y-2">
                                 {['Branding', 'Design', 'Marketing', 'Development'].map(item => (
-                                    <li key={item}><a href="#" className="hover:text-theme-red transition-colors">{item}</a></li>
+                                    <li key={item}><a href="#" className="text-sm sm:text-base hover:text-theme-red transition-colors">{item}</a></li>
                                 ))}
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div className="border-t border-gray-300 dark:border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center text-light-text-muted dark:text-dark-text-muted">
+                <div className="border-t border-gray-300 dark:border-gray-700 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center text-light-text-muted dark:text-dark-text-muted text-xs sm:text-sm">
                     <p style={{ opacity: .3 }}>Copyright © 2024 Abhay. All Rights Reserved.</p>
                     <p className="mt-2 md:mt-0" style={{ opacity: .3 }}>Terms of Use | Privacy Policy</p>
                 </div>

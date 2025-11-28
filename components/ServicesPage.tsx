@@ -62,41 +62,41 @@ const services: ServiceItem[] = [
 
 const ServicesPage: React.FC = () => {
   return (
-    <main className="p-8">
-        <section id="services" className="py-24">
-        <div className="text-center mb-16">
-            <p className="text-lg font-bold uppercase tracking-[3px] text-light-text dark:text-dark-text">Services</p>
-            <h2 className="text-4xl md:text-6xl font-extrabold -tracking-wide leading-tight">How I Can Help You</h2>
+    <main className="p-4 sm:p-6 md:p-8">
+        <section id="services" className="py-12 sm:py-16 md:py-24">
+        <div className="text-center mb-10 sm:mb-12 md:mb-16">
+            <p className="text-sm sm:text-base md:text-lg font-bold uppercase tracking-[3px] text-light-text dark:text-dark-text">Services</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold -tracking-wide leading-tight">How I Can Help You</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-13">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-13">
             {services.map((service, index) => (
-            <div key={index} className="flex flex-col p-8 rounded-3xl border border-light-text dark:border-dark-text transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                <div className="flex items-center gap-6 mb-8">
+            <div key={index} className="flex flex-col p-6 sm:p-8 rounded-3xl border border-light-text dark:border-dark-text transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                <div className="flex items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
                 {service.icon}
-                <h3 className="text-2xl font-semibold max-w-[10rem] leading-snug">{service.title}</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold max-w-[10rem] leading-snug">{service.title}</h3>
                 </div>
-                <p className="text-light-text-muted dark:text-dark-text-muted text-base leading-relaxed flex-grow">
+                <p className="text-light-text-muted dark:text-dark-text-muted text-sm sm:text-base leading-relaxed flex-grow">
                 {service.description}
                 </p>
-                <div className="flex items-center gap-4 mt-8">
-                <div className="relative w-14 h-14">
+                <div className="flex items-center gap-3 sm:gap-4 mt-6 sm:mt-8">
+                <div className="relative w-12 h-12 sm:w-14 sm:h-14">
                     <div className="absolute inset-0 bg-light-text dark:bg-dark-text rounded-full"></div>
-                    <p className="absolute inset-0 flex items-center justify-center font-bold text-xl text-theme-red">{service.projects}+</p>
+                    <p className="absolute inset-0 flex items-center justify-center font-bold text-lg sm:text-xl text-theme-red">{service.projects}+</p>
                 </div>
-                <p className="font-medium">Projects Done</p>
+                <p className="font-medium text-sm sm:text-base">Projects Done</p>
                 </div>
             </div>
             ))}
         </div>
-        <div className="text-center mt-16">
-            <a href="#projects" className="inline-block px-4 py-3 rounded-full border-2 border-theme-red font-semibold text-lg hover:bg-theme-red hover:text-white dark:hover:text-dark-text transition-colors">
+        <div className="text-center mt-10 sm:mt-12 md:mt-16">
+            <a href="#projects" className="inline-block px-4 sm:px-6 py-2 sm:py-3 rounded-full border-2 border-theme-red font-semibold text-base sm:text-lg hover:bg-theme-red hover:text-white dark:hover:text-dark-text transition-colors">
                 Explore Now
             </a>
         </div>
         </section>
         <div className="text-center mt-8">
-            <Link to="/" className="text-[13px] mt-[20px] px-3 py-2 rounded-full font-semibold text-black dark:text-light-text transition-colors hover:bg-black hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg">
+            <Link to="/" className="text-xs sm:text-sm md:text-[13px] mt-[20px] px-3 sm:px-4 py-2 rounded-full font-semibold text-black dark:text-light-text transition-colors hover:bg-black hover:text-white dark:hover:bg-dark-text dark:hover:text-dark-bg">
                 Back to Home
             </Link>
         </div>

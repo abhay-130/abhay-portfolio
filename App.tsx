@@ -23,7 +23,7 @@ import ContactPage from './components/ContactPage';
 import ScrollToTop from './components/ScrollToTop';
 
 const HomePage: React.FC = () => (
-  <main className="max-w-[1440px] mx-auto px-12 sm:px-16 lg:px-13">
+  <main className="max-w-[1440px] mx-auto px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20">
     <Hero />
     <Services />
     <Projects />

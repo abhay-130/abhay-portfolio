@@ -13,11 +13,11 @@ const skillsLogos = [
 
 const Softwares: React.FC = () => {
     return (
-        <section className="py-12 overflow-hidden">
-            <h2 className="text-3xl font-bold text-center mb-6 tracking-widest">SOFTWARE I USE</h2>
+        <section className="py-8 sm:py-10 md:py-12 overflow-hidden">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 sm:mb-5 md:mb-6 tracking-widest">SOFTWARE I USE</h2>
             
             <div 
-                className="relative w-full bg-gray-100 dark:bg-gray-800 py-4"
+                className="relative w-full bg-gray-100 dark:bg-gray-800 py-3 sm:py-4"
                 style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}
             >
                 <style>{`
@@ -38,7 +38,7 @@ const Softwares: React.FC = () => {
                     {[...skillsLogos, ...skillsLogos].map((logo, i) => (
                         <img 
                             key={i} src={logo} alt="Skill" 
-                            className="h-16 w-16 md:h-20 md:w-20 object-contain mr-12" 
+                            className="h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain mr-8 sm:mr-10 md:mr-12" 
                         />
                     ))}
                 </div>
