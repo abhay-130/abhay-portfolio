@@ -1,24 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+// Define the structure for our language objects
+interface LanguageContent {
+  lang: string;
+  line1: string; // The "Hi, I'm" part
+  line2: string; // The "AbhaY!" part (will get the gradient)
+}
 
 const Hero: React.FC = () => {
+  // 1. STATE: Keeps track of which language index is currently showing
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // 2. DATA: The list of languages in the specific order you requested
+  // Order: Hindi -> English -> Urdu -> Punjabi -> Others
+  const languages: LanguageContent[] = [
+    { lang: 'Hindi', line1: "नमस्ते, मैं", line2: "अभय हूँ!" },
+    { lang: 'English', line1: "Hi, I'm", line2: "AbhaY!" },
+    { lang: 'Urdu', line1: "سلام، میں", line2: "ابھے ہوں!" },
+    { lang: 'Punjabi', line1: "ਸਤ ਸ੍ਰੀ ਅਕਾਲ, ਮੈਂ", line2: "ਅਭੈ ਹਾਂ!" },
+    { lang: 'Bengali', line1: "নমস্কার, আমি", line2: "অভয়!" },
+    { lang: 'Tamil', line1: "வணக்கம், நான்", line2: "அபய்!" },
+    { lang: 'Telugu', line1: "నమస్కారం, నేను", line2: "అభయ్!" },
+    { lang: 'Marathi', line1: "नमस्कार, मी", line2: "अभय आहे!" },
+    { lang: 'Gujarati', line1: "નમસ્તે, હું", line2: "અભય છું!" },
+    { lang: 'Kannada', line1: "ನಮಸ್ಕಾರ, ನಾನು", line2: "ಅಭಯ್!" },
+    { lang: 'Malayalam', line1: "നമസ്കാരം, ഞാൻ", line2: "അഭയ്!" },
+  ];
+
+  // 3. EFFECT: Cycles through the array every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % languages.length);
+    }, 4000); // 3000ms = 3 seconds
+
+    // Cleanup function to stop the timer if the component unmounts
+    return () => clearInterval(interval);
+  }, [languages.length]);
+
   return (
     <section
       id="home"
       className="
         w-full
         flex flex-col lg:flex-row 
-        
-        /* CHANGED: 
-           1. items-center (keeps mobile centered horizontally)
-           2. lg:items-start (stops desktop from forcing vertical center) 
-           3. justify-start (keeps content at the top of the main axis)
-        */
         items-center lg:items-start justify-start
-        
         bg-white dark:bg-dark-bg
-        
-        /* This is the distance from the top of the screen */
-        /* 0px would hide it behind the navbar. 80-100px is usually safe. */
         
         !pt-[80px] lg:!pt-[80px] 
         !pb-[60px]  lg:!pb-[50px]
@@ -32,17 +58,20 @@ const Hero: React.FC = () => {
     >
       
       {/* 1. TEXT SECTION */}
-      {/* Added lg:mt-[40px] to align text nicely with the image top if needed */}
       <div className="flex flex-col items-center text-center lg:items-start lg:text-left w-full lg:w-1/2 lg:mt-[20px]">
         
         <span className="mb-[15px] py-[8px] px-[16px] rounded-full bg-gray-100 dark:bg-gray-800 text-[12px] font-bold uppercase tracking-wider text-gray-600 dark:text-gray-300">
           Architecture & Design
         </span>
 
-        <h1 className="font-poppins font-extrabold text-[40px] sm:text-[60px] lg:text-[90px] leading-[1.1] text-gray-900 dark:text-white mb-[20px]">
-          Hi, I'm <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
-            AbhaY!
+        {/* DYNAMIC HEADING SECTION */}
+        <h1 className="font-poppins font-extrabold text-[40px] sm:text-[60px] lg:text-[90px] leading-[1.1] text-gray-900 dark:text-white mb-[20px] min-h-[140px] lg:min-h-[200px]">
+          {/* We use a transition effect here implicitly by React re-rendering */}
+          <span className="block animate-fade-in">
+            {languages[currentIndex].line1}
+          </span> 
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 block">
+            {languages[currentIndex].line2}
           </span>
         </h1>
 
