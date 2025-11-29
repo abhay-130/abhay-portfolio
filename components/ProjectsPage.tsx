@@ -14,14 +14,24 @@ const ProjectsPage: React.FC = () => {
   return (
     <main className="p-4 sm:p-6 md:p-8">
         <section id="projects" className="pt-0 sm:py-16 md:py-24">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-8 sm:mb-10 md:mb-12 gap-4">
-            <div>
-            <p className="text-sm sm:text-base font-medium uppercase tracking-[3px]">Projects</p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold -tracking-wide leading-tight">Latest Works</h2>
-            </div>
-            <a href="#" className="mt-4 md:mt-0 px-3 sm:px-4 py-2 text-sm sm:text-base rounded-full border-2 border-theme-red font-semibold hover:bg-theme-red hover:text-white dark:hover:text-dark-text transition-colors">
+        <div className="flex flex-row justify-between items-end mb-8 sm:mb-10 md:mb-12 gap-2 sm:gap-4">
+        {/* Left Side: Text */}
+        <div>
+            <p className="text-xs sm:text-base font-medium uppercase tracking-[2px] sm:tracking-[3px]">Projects</p>
+            {/* Reduced text-3xl to text-xl/2xl on mobile to fit next to button */}
+            <h2 className="text-xl min-[400px]:text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold -tracking-wide leading-tight">
+            Latest Works
+            </h2>
+        </div>
+
+        {/* Right Side: Button */}
+        {/* Removed mt-4, reduced padding (px-3 py-1) and text size (text-xs) for mobile */}
+        <a 
+            href="#" 
+            className="whitespace-nowrap px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-base rounded-full border-2 border-theme-red font-semibold hover:bg-theme-red hover:text-white dark:hover:text-dark-text transition-colors"
+        >
             EXPLORE MORE
-            </a>
+        </a>
         </div>
 
         <div className="flex overflow-x-auto space-x-4 sm:space-x-6 md:space-x-8 pb-4 sm:pb-6 md:pb-8 scrollbar-thin scrollbar-thumb-theme-red scrollbar-track-gray-200 dark:scrollbar-track-gray-700 -mx-4 sm:-mx-0 px-4 sm:px-0">
