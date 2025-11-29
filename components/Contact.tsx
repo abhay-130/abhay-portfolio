@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Contact: React.FC = () => {
@@ -8,10 +7,26 @@ const Contact: React.FC = () => {
         <div className="flex-1 w-full bg-gray-100 dark:bg-gray-800 p-6 sm:p-8 md:p-12 rounded-3xl">
           <h3 className="text-xl sm:text-2xl font-bold text-theme-red mb-6">Message for AbhaY</h3>
           <form className="space-y-4 sm:space-y-6">
-            <input type="text" placeholder="Your name" className="w-full p-3 sm:p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors text-sm sm:text-base" />
-            <input type="email" placeholder="Your email/contact" className="w-full p-3 sm:p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors text-sm sm:text-base" />
-            <textarea placeholder="Your message" rows={5} className="w-full p-3 sm:p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors text-sm sm:text-base resize-none"></textarea>
-            <button type="submit" className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-theme-red text-white dark:text-dark-text font-semibold rounded-full text-base sm:text-lg hover:opacity-80 transition-opacity">
+            <input 
+              type="text" 
+              placeholder="Your name" 
+              className="w-full p-3 sm:p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors text-sm sm:text-base" 
+            />
+            {/* Changed type="email" to type="text" to accept both email and phone numbers */}
+            <input 
+              type="text" 
+              placeholder="Your email/contact" 
+              className="w-full p-3 sm:p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors text-sm sm:text-base" 
+            />
+            <textarea 
+              placeholder="Your message" 
+              rows={5} 
+              className="w-full p-3 sm:p-4 bg-white dark:bg-dark-bg rounded-lg border-2 border-transparent focus:border-theme-red outline-none transition-colors text-sm sm:text-base resize-none"
+            ></textarea>
+            <button 
+              type="submit" 
+              className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-theme-red text-white dark:text-dark-text font-semibold rounded-full text-base sm:text-lg hover:opacity-80 transition-opacity"
+            >
               SEND MESSAGE
             </button>
           </form>
